@@ -7,7 +7,7 @@ This repository is an implementation of the Backpropagation Kalman filter algori
 *Example of a sequence of frames of moving circles. The objective is to track the position of the red circle. 
 There are 10 circles in the upper sequence and 100 circles in the bottom sequence.* [1]
 
-This code was written for a reproduction study of which the paper is available in [paper](paper.pdf).
+This code was written for a reproduction study of which the paper is available in [paper](paper.pdf) (in Dutch).
 
 Parts of the code are inspired by or taken from [2] and [3].
 
