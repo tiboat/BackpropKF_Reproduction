@@ -30,13 +30,13 @@ def get_val_loss(FFModel, KalmanModel, val_loader, loss_function, random_start_p
         return total_loss / num_batches
 
 
-def epoch_end(epoch, result):
-    print("{},{:.4f},{:.4f},{:.4f}".format(
+def epoch_end(self, epoch, result):
+    print("Epoch [{}], train_loss: {:.4f}, val_loss: {:.4f}, last_lr: {:.4f}".format(
         epoch, result['train_loss'], result['val_loss'], result['lr'][-1]))
 
 
-def epoch_end_no_lr(epoch, result):
-    print("{},{:.4f},{:.4f}".format(
+def epoch_end_no_lr(self, epoch, result):
+    print("Epoch [{}], train_loss: {:.4f}, val_loss: {:.4f}".format(
         epoch, result['train_loss'], result['val_loss']))
 
 

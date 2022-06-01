@@ -24,11 +24,11 @@ class StepModule(nn.Module):
         epoch_loss = torch.stack(batch_losses).mean()  # Combine losses
         return {'val_loss': epoch_loss.item()}
 
-    def epoch_end_no_lr(self, epoch, result):
-        print("{},{:.4f},{:.4f}".format(
-            epoch, result['train_loss'], result['val_loss']))
-
     def epoch_end(self, epoch, result):
-        print("{},{:.4f},{:.4f},{:.4f}".format(
+        print("Epoch [{}], train_loss: {:.4f}, val_loss: {:.4f}, last_lr: {:.4f}".format(
             epoch, result['train_loss'], result['val_loss'], result['lr'][-1]))
+
+    def epoch_end_no_lr(self, epoch, result):
+        print("Epoch [{}], train_loss: {:.4f}, val_loss: {:.4f}".format(
+            epoch, result['train_loss'], result['val_loss']))
 
